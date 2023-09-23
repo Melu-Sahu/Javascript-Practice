@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Learning</title>
+</head>
+<body style="background-color: #212121 ; color : #fff">
+
+    <ul class="language">
+        <li>Javascript</li>
+
+    </ul>
+    
+</body>
+<script>
+    function addLanguage(language){
+        let list = document.createElement('li');
+        list.innerHTML = language;
+        list.style.padding = '5px';
+        list.style.fontSize = '20px'
+
+        document.querySelector('.language').appendChild(list);
+    }
+    addLanguage('Typescript');
+    addLanguage('Python');
+
+            // Below approach is better then above
+
+    function addOLanguage(language){
+        let list = document.createElement('li');
+        list.appendChild(document.createTextNode(language));
+
+        document.querySelector('.language').appendChild(list);
+    }
+
+    addOLanguage('Java');
+    addOLanguage('Go Langauge')
+
+
+            // Edit
+
+    const thirdLanguage = document.querySelector('li:nth-child(3)');
+    // thirdLanguage.innerHTML = 'CPP';             // not optimized approach
+
+    const newLi = document.createElement('li');
+    newLi.textContent = 'Rust';
+    thirdLanguage.replaceWith(newLi); 
+
+
+    // remove
+
+    const lastLanguage = document.querySelector('li:last-child');
+    lastLanguage.remove();
+</script>
+</html>

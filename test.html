@@ -1,0 +1,23 @@
+<script>
+
+    class Employee {
+
+        constructor(name){
+            this.empName = name;
+            document.write("Hii. Constructor method Invoked.");
+        }
+        info(){
+           document.write(`Hii. I am ${this.empName} from Employee Class.`);
+
+            // return `Hii. I am ${this.empName} from Employee Class.`;
+        }
+
+    }
+
+    let emp = new Employee("Melu.");
+    let emp2 = new Employee("Harish");
+
+
+    emp.info();
+    emp2.info();
+</script>

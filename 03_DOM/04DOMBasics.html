@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Learning</title>
+</head>
+
+<body style="background-color: #212121 ; color : #fff">
+
+
+    <script>
+        const div = document.createElement('div')
+        console.log(div);
+        div.className = 'main';
+        div.id = Math.floor(Math.random() * 10 + 1);
+        console.log(div.id);
+        div.setAttribute('title', 'generated title');
+        div.style.backgroundColor = 'green';
+        div.style.padding = '12px';
+
+        // div.innerHTML = 'This is Melu.'
+
+        //OR
+
+        const addText = document.createTextNode('This is Melu.');
+        div.appendChild(addText);
+
+        document.body.appendChild(div)
+
+        const color = ['green', 'red', 'blue', 'orange', 'violet'];
+        const text = [
+            'This is Melu',
+            'This is Harish',
+            'This is Jageshwar',
+            'This is Ram',
+            'This is Ruby'];
+        const name = ['Melu', 'Harish', 'Jageshwar', 'Pappu', 'Modi'];
+
+
+
+
+
+        function createDiv(color, text, name) {
+            let newDiv = document.createElement("div");
+
+            newDiv.style.backgroundColor = color;
+            newDiv.style.padding = '30px';
+            newDiv.style.margin = '10px';
+            newDiv.style.fontSize = '25px'
+            newDiv.style.borderRadius = '25px'
+            newDiv.style.border = '2px solid #fff'
+            newDiv.style.boxShadow = '2px 2px 2px white'
+
+
+            const thisText = document.createTextNode(text);
+            newDiv.appendChild(thisText);
+            newDiv.className = name;
+
+            document.body.appendChild(newDiv);
+        }
+
+        for (let i = 0; i < name.length; i++) {
+            createDiv(color[i], text[i], name[i]);
+
+        }
+
+    </script>
+</body>
+
+</html>

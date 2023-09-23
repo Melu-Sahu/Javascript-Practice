@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Learning</title> 
+
+    <script>
+
+        console.log(document.querySelector('p').innerHTML);
+        console.log(document.querySelector('p').innerText);
+        console.log(document.querySelector('p').textContent);           // textContent will show all the content weather it is hidden by any element property or not
+
+
+        /* css property
+
+        displey : none;         // this completely remove the element from the document.
+        visibility: hidden;        // hides it but still takes up space in layout (or document) (not recommended)
+    </script>
+</head>
+
+<body>
+    <h1>Hii</h1>    
+    <p>Lorem ipsum dolor <span style="visibility: hidden;"> Author: Meluram Sahu</span> sit amet consectetur adipisicing elit. Error, quaerat! </p>
+
+
+
+</body>
+</html>
