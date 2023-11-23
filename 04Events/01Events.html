@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> HTML Event Learning</title>
+</head>
+<style>
+
+    .box{
+        border: 2px solid black;
+        width: 100px;
+        height: 100px;
+    }
+
+</style>
+<body>
+    
+    <ul id="list">
+        <li><div class="box" style="margin: 4px;  background-color:yellow ;" id="yellow"></div></li>
+        <li><div class="box" style="margin: 4px;  background-color: green ;" id="green"></div></li>
+        <li><div class="box" style="margin: 4px;  background-color: red;" id="red"></div></li>
+        <li><div class="box" style="margin: 4px;  background-color: blue;" id="blue"></div></li>
+        <li><div class="box" style="margin: 4px;  background-color: orange;" id="orange"></div></li>
+        <li><div class="box" style="margin: 4px;  background-color: violet ;" id="violet"></div></li>
+        <li><div class="box" style="margin: 4px;  background-color: purple;" id="purple"></div></li>
+    </ul>
+        
+</body>
+<script>
+    let red = document.getElementById('red');
+
+    // red.onclick = ()=>alert('Hii, Red Clicked');
+
+    // red.addEventListener('click', (e)=>{alert('red Clicked');
+    //                                     console.log(e.currentTarget);},false);
+
+    // type, timeStamp, defaultPrevent, target, toElement, srcElement,
+    // currentTarget, clientX, clientY, screenX, screenY, altKey, ctrlKey, shiftKey, keyCode
+
+    // document.getElementById('green').addEventListener('click',(e)=>{
+    //         console.log(e.target);
+    //         console.log(e.type);
+    //         console.log(e.timeStamp);
+    //         console.log(e.toElement);
+    //         console.log(e.currentTarget);
+    //         console.log(e.target.id);
+    //         console.log(e.target.className);
+    //         console.log(e.cancelable);
+    //         console.log(e.detail);
+    // }, false)
+
+        // propagation and bubbling and catching events *********************
+
+
+    let list = document.getElementById('list');
+    let blue = document.getElementById('blue');
+
+    // list.addEventListener('click',(e)=>alert('clicked inside list'), false);        // this is called Bubblilng that after child event's action's, parent event will fire up
+    // blue.addEventListener('click', (e)=>alert('clicked inside blue'), false)
+
+    // list.addEventListener('click',(e)=>alert('clicked inside list'), true);        // this is called Catching that after parent event's action's, child event will fire up
+    // blue.addEventListener('click', (e)=>alert('clicked inside blue'), true)
+
+    // if we want to prevent this propagation, then we have to use e.stopPropagation() method inside callback function.
+
+    list.addEventListener('click',(e)=>alert('clicked inside list'), false);                            // if these will true, then stopPropagation will not work.
+    blue.addEventListener('click', (e)=>{ e.stopPropagation();alert('clicked inside blue');}, false)
+
+
+</script>
+</html>

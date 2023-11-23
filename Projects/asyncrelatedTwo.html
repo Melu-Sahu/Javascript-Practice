@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>Set Interval</h1>
+    <h1>Second : <spn id="time">time</spn></h1>
+    <button id="stop" onclick="stop()">Stop</button>
+    <button id="start" onclick="start()">start</button>
+    <button id="restart" onclick="restart()">restart</button>
+
+</body>
+
+<script>
+    
+    
+   let time = 0;
+
+   let setTime = ()=>{
+    time = time+1;
+    document.querySelector('#time').innerText = time;
+   }
+
+   let interval = setInterval(setTime, 1000);
+
+//    let stop = document.querySelector('#stop');
+//    let start = document.querySelector('#start');
+
+//    stop.addEventListner('click', ()=>{
+//     clearInterval(interval);
+//    })
+
+function stop(){
+    clearInterval(interval);
+}
+function start(){
+    interval = setInterval(setTime,1000);
+}
+function restart(){
+    clearInterval(interval);
+    time = 0;
+    document.querySelector('#time').innerText = time;
+}
+
+
+</script>
+
+</html>
